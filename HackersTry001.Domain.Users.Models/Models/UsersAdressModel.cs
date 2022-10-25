@@ -1,6 +1,6 @@
 ﻿using HackersTry001.Core.Common.Base;
 
-namespace HackersTry001.Domain.Users.Models
+namespace HackersTry001.Domain.Users.Models.Models
 {
     public class UsersAdressModel : ExtendBaseModel
     {

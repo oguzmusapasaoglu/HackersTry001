@@ -3,21 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32811.315
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackersTry001.Domain.Users.Data", "HackersTry001.Domain.Users.Data\HackersTry001.Domain.Users.Data.csproj", "{8084FF4A-32D1-4A1E-8B9E-718BED4073E2}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Users", "Users", "{98D857C5-6E2C-451F-B541-A16999BC5D04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackersTry001.Domain.Users.Services", "HackersTry001.Domain.Users.Services\HackersTry001.Domain.Users.Services.csproj", "{3CD4E61C-D4C1-4C39-B729-431DC7BF1AF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HackersTry001.Domain.Users.Services", "HackersTry001.Domain.Users.Services\HackersTry001.Domain.Users.Services.csproj", "{3CD4E61C-D4C1-4C39-B729-431DC7BF1AF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackersTry001.Domain.Users.Models", "HackersTry001.Domain.Users.Models\HackersTry001.Domain.Users.Models.csproj", "{22E81838-DBBE-4BEB-B602-4904E8306249}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HackersTry001.Domain.Users.Models", "HackersTry001.Domain.Users.Models\HackersTry001.Domain.Users.Models.csproj", "{22E81838-DBBE-4BEB-B602-4904E8306249}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackersTry001.ApiServiceses", "HackersTry001.ApiServiceses\HackersTry001.ApiServiceses.csproj", "{4A74627D-ABA3-4874-8A12-9CD761998C85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HackersTry001.ApiServiceses", "HackersTry001.ApiServiceses\HackersTry001.ApiServiceses.csproj", "{4A74627D-ABA3-4874-8A12-9CD761998C85}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{1852BC74-EFF8-4811-A12C-94816A56B150}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackersTry001.Core.Common", "HackersTry001.Core.Common\HackersTry001.Core.Common.csproj", "{B5F68364-6822-419E-94D4-95784D35F3E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HackersTry001.Core.Common", "HackersTry001.Core.Common\HackersTry001.Core.Common.csproj", "{B5F68364-6822-419E-94D4-95784D35F3E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackersTry001.Core.Dapper", "HackersTry001.Core.Dapper\HackersTry001.Core.Dapper.csproj", "{E62399FC-63C8-46C2-9D4D-E018C69E8F5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HackersTry001.Core.Dapper", "HackersTry001.Core.Dapper\HackersTry001.Core.Dapper.csproj", "{E62399FC-63C8-46C2-9D4D-E018C69E8F5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackersTry001.Domain.Users.Repository", "HackersTry001.Domain.Users.Repository\HackersTry001.Domain.Users.Repository.csproj", "{962BFC9C-A2B9-42BD-AE60-DFB5C007DCF2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +25,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8084FF4A-32D1-4A1E-8B9E-718BED4073E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8084FF4A-32D1-4A1E-8B9E-718BED4073E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8084FF4A-32D1-4A1E-8B9E-718BED4073E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8084FF4A-32D1-4A1E-8B9E-718BED4073E2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3CD4E61C-D4C1-4C39-B729-431DC7BF1AF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3CD4E61C-D4C1-4C39-B729-431DC7BF1AF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CD4E61C-D4C1-4C39-B729-431DC7BF1AF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -49,16 +45,20 @@ Global
 		{E62399FC-63C8-46C2-9D4D-E018C69E8F5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E62399FC-63C8-46C2-9D4D-E018C69E8F5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E62399FC-63C8-46C2-9D4D-E018C69E8F5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{962BFC9C-A2B9-42BD-AE60-DFB5C007DCF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{962BFC9C-A2B9-42BD-AE60-DFB5C007DCF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{962BFC9C-A2B9-42BD-AE60-DFB5C007DCF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{962BFC9C-A2B9-42BD-AE60-DFB5C007DCF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{8084FF4A-32D1-4A1E-8B9E-718BED4073E2} = {98D857C5-6E2C-451F-B541-A16999BC5D04}
 		{3CD4E61C-D4C1-4C39-B729-431DC7BF1AF5} = {98D857C5-6E2C-451F-B541-A16999BC5D04}
 		{22E81838-DBBE-4BEB-B602-4904E8306249} = {98D857C5-6E2C-451F-B541-A16999BC5D04}
 		{B5F68364-6822-419E-94D4-95784D35F3E6} = {1852BC74-EFF8-4811-A12C-94816A56B150}
 		{E62399FC-63C8-46C2-9D4D-E018C69E8F5A} = {1852BC74-EFF8-4811-A12C-94816A56B150}
+		{962BFC9C-A2B9-42BD-AE60-DFB5C007DCF2} = {98D857C5-6E2C-451F-B541-A16999BC5D04}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F0FC31D8-4AC2-496F-BB35-26C9A2715ECD}
