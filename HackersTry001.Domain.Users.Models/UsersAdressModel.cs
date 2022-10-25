@@ -1,4 +1,4 @@
-﻿using HackersTry001.Domain.Users.Models.Base;
+﻿using HackersTry001.Core.Common.Base;
 
 namespace HackersTry001.Domain.Users.Models
 {
