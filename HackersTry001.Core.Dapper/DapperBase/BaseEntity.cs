@@ -1,15 +1,15 @@
 ﻿using Dapper.Contrib.Extensions;
 
-namespace HackersTry001.Core.Dapper.Base
+namespace HackersTry001.Core.Dapper.DapperBase
 {
-    public class BaseDapperEntity
+    public class BaseEntity
     {
         [Key]
         public int ID { get; set; }
         public int Status { get; set; }
     }
   
-    public class ExtendBaseDapperEntity : BaseDapperEntity
+    public class ExtendBaseEntity : BaseEntity
     {
         public DateTime CreateDate { get; set; }
         public int CreatedBy { get; set; }

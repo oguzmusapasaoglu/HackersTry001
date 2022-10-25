@@ -2,7 +2,7 @@
 
 namespace HackersTry001.Domain.Users.Data.Interfaces
 {
-    public interface IUserInfoServices<TModel> : ICRUD<TModel>, IFilter<TModel>
+    public interface IUserInfoServices<TModel> : ICreateRepository<TModel>, IFilterRepository<TModel>
         where TModel : class
     {
     }
