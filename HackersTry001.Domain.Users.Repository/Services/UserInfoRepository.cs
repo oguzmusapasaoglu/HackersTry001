@@ -41,5 +41,7 @@ namespace HackersTry001.Domain.Users.Repository.Services
         {
             throw new NotImplementedException();
         }
+
+        public void Deneme() { }
     }
 }
