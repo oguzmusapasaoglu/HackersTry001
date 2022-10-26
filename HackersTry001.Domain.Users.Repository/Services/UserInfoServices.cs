@@ -35,5 +35,14 @@ namespace HackersTry001.Domain.Users.Data.Services
         {
             throw new NotImplementedException();
         }
+=======
+using HackersTry001.Domain.Users.Models.Models;
+
+namespace HackersTry001.Domain.Users.Data.Services
+{
+    public class UserInfoServices 
+    {
+      
+>>>>>>> 58425c03dee0e00e62efde3e2dfbb137d4684607
     }
 }
