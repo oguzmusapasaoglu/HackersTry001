@@ -1,9 +1,4 @@
-﻿using Dapper;
-using HackersTry001.Core.Common.Dapper.Interfaces;
-using System.Data.Common;
-using System.Data;
-using System.Text;
-using HackersTry001.Core.Common.Dapper.Helper;
+﻿using HackersTry001.Core.Common.Dapper.Interfaces;
 using Dapper.Contrib.Extensions;
 using HackersTry001.Core.Common.ExceptionHandling;
 using HackersTry001.Core.Dapper.DapperBase;
@@ -13,10 +8,6 @@ namespace HackersTry001.Core.Common.Dapper.Factory
     public class DbFactory : IDbFactory
     {
         private IConnectionFactory connectionFactory;
-        //public DbFactory(IConnectionFactory _connectionFactory)
-        //{
-        //    connectionFactory = _connectionFactory; ;
-        //}
         public DbFactory()
         {
             connectionFactory = new ConnectionFactory();
