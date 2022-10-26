@@ -3,7 +3,7 @@ using HackersTry001.Domain.Users.Models.Entities;
 
 namespace HackersTry001.Domain.Users.Data.Interfaces
 {
-    public interface IUserInfoServices :
+    public interface IUserInfoRepository :
         ICreateRepository<UserInfoEntity>,
         IUpdateRepository<UserInfoEntity>,
         IFilterRepository<UserInfoEntity>

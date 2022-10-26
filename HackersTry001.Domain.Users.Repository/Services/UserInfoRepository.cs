@@ -2,9 +2,15 @@
 using HackersTry001.Domain.Users.Data.Interfaces;
 using HackersTry001.Domain.Users.Models.Entities;
 
-namespace HackersTry001.Domain.Users.Data.Services
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace HackersTry001.Domain.Users.Repository.Services
 {
-    public class UserInfoServices : IUserInfoServices
+    public class UserInfoRepository : IUserInfoRepository
     {
         public ResponseBase<UserInfoEntity> Create(UserInfoEntity request)
         {
@@ -35,14 +41,5 @@ namespace HackersTry001.Domain.Users.Data.Services
         {
             throw new NotImplementedException();
         }
-=======
-using HackersTry001.Domain.Users.Models.Models;
-
-namespace HackersTry001.Domain.Users.Data.Services
-{
-    public class UserInfoServices 
-    {
-      
->>>>>>> 58425c03dee0e00e62efde3e2dfbb137d4684607
     }
 }
