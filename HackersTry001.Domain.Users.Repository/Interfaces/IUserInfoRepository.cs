@@ -6,6 +6,7 @@ namespace HackersTry001.Domain.Users.Data.Interfaces
     public interface IUserInfoRepository :
         ICreateRepository<UserInfoEntity>,
         IUpdateRepository<UserInfoEntity>,
+        IDeleteRepository,
         IFilterRepository<UserInfoEntity>
     {
     }

@@ -30,7 +30,6 @@ namespace HackersTry001.Core.Common.Dapper.Factory
                 throw new KnownException(ExceptionTypeEnum.Fattal, ex);
             }
         }
-
         public bool UpdateEntity<TResult>(string connectionString, TResult entity) where TResult : BaseEntity
         {
             try
@@ -49,7 +48,6 @@ namespace HackersTry001.Core.Common.Dapper.Factory
                 throw new KnownException(ExceptionTypeEnum.Fattal, ex);
             }
         }
-
         public IQueryable<TResult> GetAll<TResult>(string connectionString) where TResult : BaseEntity
         {
             try
@@ -67,7 +65,6 @@ namespace HackersTry001.Core.Common.Dapper.Factory
                 throw new KnownException(ExceptionTypeEnum.Fattal, ex);
             }
         }
-
         public TResult GetSingle<TResult>(string connectionString, int id) where TResult : BaseEntity
         {
             try

@@ -9,6 +9,6 @@ namespace HackersTry001.Domain.Users.Services.Models
         public string FullAdress { get; set; }
         public string AdressDecription { get; set; }
 
-        public UserInfoModel UserInfo { get; set; }
+        public UserInfoModels UserInfo { get; set; }
     }
 }

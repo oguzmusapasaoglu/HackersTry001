@@ -3,6 +3,6 @@
     public interface IUpdateRepository<TEntity>
         where TEntity : class
     {
-        ResponseBase<TEntity> Update(TEntity request);
+        TEntity Update(TEntity request);
     }
 }

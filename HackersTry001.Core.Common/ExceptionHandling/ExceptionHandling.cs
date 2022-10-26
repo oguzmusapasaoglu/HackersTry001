@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 
 namespace HackersTry001.Core.Common.ExceptionHandling
 {
@@ -18,6 +19,9 @@ namespace HackersTry001.Core.Common.ExceptionHandling
 
     public class KnownException : Exception
     {
+        private ExceptionTypeEnum warn;
+        private string v;
+
         public string MethotName { get; set; }
         public ExceptionTypeEnum ExceptionType { get; set; }
         public string Message { get; set; }
@@ -41,6 +45,7 @@ namespace HackersTry001.Core.Common.ExceptionHandling
             ExceptionProp = exception;
             MethotName = GetMethodName(exception);
         }
+
         private string GetMethodName(Exception exception)
         {
             var trace = new StackTrace(exception).GetFrames().Select(q => q.GetMethod()).FirstOrDefault();

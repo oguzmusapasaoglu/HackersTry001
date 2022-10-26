@@ -9,7 +9,6 @@
   <ItemGroup>
     <ProjectReference Include="..\HackersTry001.Core.Common\HackersTry001.Core.Common.csproj" />
     <ProjectReference Include="..\HackersTry001.Core.Dapper\HackersTry001.Core.Dapper.csproj" />
-    <ProjectReference Include="..\HackersTry001.Domain.Users.Models\HackersTry001.Domain.Users.Models.csproj" />
   </ItemGroup>
 
   <ItemGroup>

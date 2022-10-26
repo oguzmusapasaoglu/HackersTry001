@@ -1,45 +1,79 @@
-﻿using HackersTry001.Core.Common.Base;
+﻿using HackersTry001.Core.Common.Dapper.Factory;
+using HackersTry001.Core.Common.Dapper.Interfaces;
+using HackersTry001.Core.Common.ExceptionHandling;
+using HackersTry001.Core.Common.Helper;
 using HackersTry001.Domain.Users.Data.Interfaces;
 using HackersTry001.Domain.Users.Models.Entities;
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HackersTry001.Domain.Users.Repository.Services
 {
     public class UserInfoRepository : IUserInfoRepository
     {
-        public ResponseBase<UserInfoEntity> Create(UserInfoEntity request)
+        private IDbFactory dbFactory;
+        private string connectionString => ConfigurationHelper.GetTConfig<SqlServerConfig>(SqlServerConfig.SectionName).ConnectionStr;
+        public UserInfoRepository()
         {
-            throw new NotImplementedException();
+            dbFactory = new DbFactory();
         }
 
-        public ResponseBase<IQueryable<UserInfoEntity>> GetAll()
+        #region Create Update Delete
+        public UserInfoEntity Create(UserInfoEntity request)
         {
-            throw new NotImplementedException();
+            if (request.ID.HasValue)
+                throw new NotificationException("ID alanı set edilemez!", ExceptionTypeEnum.Warn);
+
+            DataControl(request);
+            request.ID = dbFactory.InsertEntity(connectionString, request);
+            if (!request.ID.HasValue)
+                throw new NotificationException("Kayıt başarısız!", ExceptionTypeEnum.Warn);
+            return request;
         }
 
-        public ResponseBase<IQueryable<UserInfoEntity>> GetAll(UserInfoEntity request)
+        public UserInfoEntity Update(UserInfoEntity request)
         {
-            throw new NotImplementedException();
+            if (!request.ID.HasValue)
+                throw new NotificationException("ID alanı set edilmeli!", ExceptionTypeEnum.Warn);
+
+            DataControl(request);
+            if (!dbFactory.UpdateEntity(connectionString, request))
+                throw new NotificationException("Kayıt başarısız!", ExceptionTypeEnum.Warn);
+            return request;
         }
 
-        public ResponseBase<UserInfoEntity> GetSingle(int id)
+        public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            if (id <= 0)
+                throw new NotificationException("ID alanı set edilmeli!", ExceptionTypeEnum.Warn);
+            var user = GetSingle(id);
+            user.Status = (int)ActivationStatusEnum.Deleted;
+            if (!dbFactory.UpdateEntity(connectionString, user))
+                throw new NotificationException("Kayıt başarısız!", ExceptionTypeEnum.Warn);
+            return false;
         }
 
-        public ResponseBase<UserInfoEntity> GetSingle(UserInfoEntity request)
+        private void DataControl(UserInfoEntity request)
         {
-            throw new NotImplementedException();
+            var data = GetAll();
+            var user = data.FirstOrDefault(h => h.UserName == request.UserName || h.Email == request.Email);
+
+            if (!request.ID.HasValue && user != null)
+                throw new NotificationException("Bu data kullanımdadır", ExceptionTypeEnum.Warn);
+
+            if (user != null && user.ID != request.ID)
+                throw new NotificationException("Bu data kullanımdadır", ExceptionTypeEnum.Warn);
+        }
+        #endregion
+
+        #region Filter Methods
+        public IQueryable<UserInfoEntity> GetAll()
+        {
+            return dbFactory.GetAll<UserInfoEntity>(connectionString);
         }
 
-        public ResponseBase<UserInfoEntity> Update(UserInfoEntity request)
+        public UserInfoEntity GetSingle(int id)
         {
-            throw new NotImplementedException();
+            return dbFactory.GetSingle<UserInfoEntity>(connectionString, id);
         }
+        #endregion
     }
 }

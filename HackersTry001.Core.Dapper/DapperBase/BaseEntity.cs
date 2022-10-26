@@ -5,7 +5,7 @@ namespace HackersTry001.Core.Dapper.DapperBase
     public class BaseEntity
     {
         [Key]
-        public int ID { get; set; }
+        public int? ID { get; set; }
         public int Status { get; set; }
     }
   

@@ -3,9 +3,7 @@
     public interface IFilterRepository<TEntity>
         where TEntity : class
     {
-        ResponseBase<IQueryable<TEntity>> GetAll();
-        ResponseBase<IQueryable<TEntity>> GetAll(TEntity request);
-        ResponseBase<TEntity> GetSingle(int id);
-        ResponseBase<TEntity> GetSingle(TEntity request);
+        IQueryable<TEntity> GetAll();
+        TEntity GetSingle(int id);
     }
 }
